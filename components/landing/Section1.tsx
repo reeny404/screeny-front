@@ -3,14 +3,14 @@ import Image from "next/image";
 
 function Section1() {
   return (
-    <section className='pl-16 py-16 grid grid-flow-col grid-cols-2'>
-      <div className='space-y-10'>
-        <h1 className='leading-snug text-[56px] font-bold tracking-tighter'>
+    <section className="grid grid-flow-col grid-cols-2 py-16 pl-16">
+      <div className="space-y-10">
+        <h1 className="text-[56px] font-bold leading-snug tracking-tighter">
           UI 디자인
           <br /> 컴포넌트 별로
           <br /> 정확한 레퍼런스 찾기
         </h1>
-        <p className='text-gray-400 tracking-tighter'>
+        <p className="tracking-tighter text-gray-400">
           지금까지 디자인 레퍼런스를 찾기 위해 <br />
           구글과 핀트레스트에 많은 시간을 투자하셨나요? <br />
           또는 앱을 매번 다운 받으면서 화면들을 확인해보셨나요? <br />
@@ -20,31 +20,31 @@ function Section1() {
           <br />
           지금 사전등록하고 얼리유저 혜택을 받아보세요!
         </p>
-        <div className='space-x-4 text-sm'>
-          <button className='border rounded-full px-4 py-3 bg-blue-500 border-blue-500 hover:brightness-125'>
+        <div className="space-x-4 text-sm">
+          <button className="rounded-full border border-blue-500 bg-blue-500 px-4 py-3 hover:brightness-125">
             사전 등록하기
           </button>
-          <button className='border rounded-full px-4 py-3 border-gray-600 hover:brightness-75'>
+          <button className="rounded-full border border-gray-600 px-4 py-3 hover:brightness-75">
             출시 알림받기
           </button>
         </div>
       </div>
-      <div className='flex flex-col items-center space-y-8'>
-        <div className='flex space-x-2 text-sm'>
+      <div className="flex flex-col items-center space-y-8">
+        <div className="flex space-x-2 text-sm">
           {[
-            '카드',
-            '플로팅 버튼',
-            '체크박스',
-            '라디오 버튼',
-            '토글 스위치',
-            '슬라이더',
+            "카드",
+            "플로팅 버튼",
+            "체크박스",
+            "라디오 버튼",
+            "토글 스위치",
+            "슬라이더",
           ].map((text, i) => {
             return (
               <div
                 key={i}
                 className={clsx(
-                  'border rounded-full px-3 py-2 font-semibold border-gray-600',
-                  i == 0 && 'bg-white text-navy'
+                  "rounded-full border border-gray-600 px-3 py-2 font-semibold",
+                  i == 0 && "bg-white text-navy"
                 )}
               >
                 {text}
@@ -52,12 +52,12 @@ function Section1() {
             );
           })}
         </div>
-        <div className='relative w-full h-full'>
+        <div className="relative h-full w-full">
           <Image
-            src='/landing/search-card.png'
-            alt='search-card-example'
+            src="/landing/search-card.png"
+            alt="search-card-example"
             fill
-            className='object-contain'
+            className="object-contain"
           />
         </div>
       </div>
