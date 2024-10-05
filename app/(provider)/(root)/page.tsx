@@ -1,0 +1,92 @@
+import clsx from 'clsx';
+import Image from 'next/image';
+
+export default function DesktopLandingPage() {
+  return (
+    <main className='px-12 py-12'>
+      <section className='pl-16 py-16 grid grid-flow-col grid-cols-2'>
+        <div className='space-y-10'>
+          <h1 className='leading-snug text-[56px] font-bold tracking-tighter'>
+            UI 디자인
+            <br /> 컴포넌트 별로
+            <br /> 정확한 레퍼런스 찾기
+          </h1>
+          <p className='text-gray-400 tracking-tighter'>
+            지금까지 디자인 레퍼런스를 찾기 위해 <br />
+            구글과 핀트레스트에 많은 시간을 투자하셨나요? <br />
+            또는 앱을 매번 다운 받으면서 화면들을 확인해보셨나요? <br />
+            내가 찾는 UI 디자인을 앱별로, 컴포넌트별로 정확히 모아서 찾아주는
+            Screeny <br />
+            레퍼런스 찾는 시간을 아껴주는 편리한 서비스
+            <br />
+            지금 사전등록하고 얼리유저 혜택을 받아보세요!
+          </p>
+          <div className='space-x-4 text-sm'>
+            <button className='border rounded-full px-4 py-3 bg-blue-500 border-blue-500 hover:brightness-125'>
+              사전 등록하기
+            </button>
+            <button className='border rounded-full px-4 py-3 border-gray-600 hover:brightness-75'>
+              출시 알림받기
+            </button>
+          </div>
+        </div>
+        <div className='flex flex-col items-center space-y-8'>
+          <div className='flex space-x-2 text-sm'>
+            {[
+              '카드',
+              '플로팅 버튼',
+              '체크박스',
+              '라디오 버튼',
+              '토글 스위치',
+              '슬라이더',
+            ].map((text, i) => {
+              return (
+                <div
+                  key={i}
+                  className={clsx(
+                    'border rounded-full px-3 py-2 font-semibold border-gray-600',
+                    i == 0 && 'bg-white text-navy'
+                  )}
+                >
+                  {text}
+                </div>
+              );
+            })}
+          </div>
+          <div className='relative w-full h-full'>
+            <Image
+              src='/landing/search-card.png'
+              alt='search-card-example'
+              fill
+              className='object-contain'
+            />
+          </div>
+        </div>
+      </section>
+      <section className='py-16'>
+        <div className='grid grid-flow-col grid-cols-2 bg-darknavy rounded'>
+          <div className=''>
+            <span className='text-green-400 font-semibold text-sm'>
+              SCREENY
+            </span>
+            <h2 className='text-3xl font-semibold leading-normal tracking-tighter'>
+              디자인 레퍼런스를
+              <br /> 찾는 시간을 단축시키기 위해,
+              <br /> 내가 찾는 화면을 정확하게
+              <br /> 한곳에 모아서 보여주기 위해.
+            </h2>
+            <span>이제는 한 곳에서 편리하고 빠르게 레퍼런스를 찾아보세요!</span>
+          </div>
+          <div className='relative w-full h-full'>
+            <Image
+              src='/landing/vault.png'
+              alt='search-card-example'
+              fill
+              className='object-contain'
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
