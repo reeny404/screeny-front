@@ -1,4 +1,5 @@
-import Header from '@/components/Header';
+import Footer from '@/components/landing/Footer';
+import Header from '@/components/landing/Header';
 import { PropsWithChildren } from 'react';
 
 function RootLayout({ children }: PropsWithChildren) {
@@ -6,6 +7,7 @@ function RootLayout({ children }: PropsWithChildren) {
     <div className='min-w-full min-h-screen bg-navy text-white'>
       <Header />
       {children}
+      <Footer />
     </div>
   );
 }
