@@ -1,10 +1,31 @@
 import Image from "next/image";
 
+const reviews = [
+  {
+    name: "H 디자이너",
+    job: "Product Designer",
+    profile: "/landing/avatar1.png",
+    text: `모든 앱을 다운 받지 않아도\n화면들을 여기서 확인할 수\n있다면 너무 편리할 것 같아요.`,
+  },
+  {
+    name: "K 디자이너",
+    job: "UI Designer",
+    profile: "/landing/avatar2.png",
+    text: `여러 앱 화면들을 컴포넌트별\n로 다 볼 수 있다면 디자인에\n도움이 많이 될 것 같아요!`,
+  },
+  {
+    name: "P 개발자",
+    job: "Front End Developer",
+    profile: "/landing/avatar3.png",
+    text: `제가 찾는 화면들을 한곳에\n모아볼 수 있다면 너무 편리\n할 것 같아요!`,
+  },
+];
+
 function Section2() {
   return (
     <section className="py-16">
-      <div className="grid grid-flow-col grid-cols-2 rounded-[2em] bg-darknavy">
-        <div className="space-y-2 py-24 pl-28">
+      <div className="bg-dark-navy-100 grid grid-flow-col grid-cols-2 rounded-[2em] pb-32">
+        <div className="space-y-2 py-32 pl-28">
           <span className="text-sm font-semibold text-green-400">SCREENY</span>
           <h2 className="pb-5 text-3xl font-semibold leading-normal tracking-tighter">
             디자인 레퍼런스를
@@ -25,41 +46,43 @@ function Section2() {
           />
         </div>
       </div>
-      <div className="relative top-10 mx-auto grid w-4/5 gap-8 md:grid-cols-3">
-        <div className="rounded-lg bg-gray-700 p-6">
-          <h3 className="mb-4 text-xl font-semibold">Feature 1</h3>
-          <p>원하는 디자인 UI를 빠르고 정확하게 찾기</p>
-        </div>
-        <div className="rounded-lg bg-gray-700 p-6">
-          <h3 className="mb-4 text-xl font-semibold">Feature 2</h3>
-          <p>AI를 활용한 디자인 추천 시스템</p>
-        </div>
-        <div className="rounded-lg bg-gray-700 p-6">
-          <h3 className="mb-4 text-xl font-semibold">Feature 3</h3>
-          <p>다양한 디자인 트렌드 분석 및 제공</p>
-        </div>
-      </div>
-      <div>
-        <p>“</p>
-        <p>
-          모든 앱을 다운 받지 않아도
-          <br />
-          화면들을 여기서 확인할 수
-          <br />
-          있다면 너무 편리할 것 같아요.
-        </p>
-        <div>
-          <div>
-            <div>
-              <div>
-                <span className="text-blue-400">@</span>
-                <span>H 디자이너</span>
+      <div className="relative -top-44 mx-auto mt-6 grid h-40 w-5/6 gap-8 md:grid-cols-3">
+        {reviews.map((review, i) => (
+          <div key={i} className="bg-dark-navy-200 rounded-3xl px-10 py-10">
+            <span className="text-3xl">“</span>
+            <p className="whitespace-pre-wrap py-10">{review.text}</p>
+            <div className="grid grid-cols-2">
+              <div className="leading-tight">
+                <div className="text-xs">
+                  <span className="pr-1 text-blue-400">@</span>
+                  <span>{review.name}</span>
+                </div>
+                <span className="text-xs text-gray-400">{review.job}</span>
               </div>
-              <span>Product Designer</span>
+              <div className="flex justify-between">
+                <div className="relative -top-1 left-[100px]">
+                  <div className="flex h-3 w-3 justify-center rounded-full bg-green-400">
+                    <Image
+                      src="/icons/check.svg"
+                      alt="check"
+                      width={6}
+                      height={4}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <Image
+                    src={review.profile}
+                    alt="avatar1"
+                    width={42}
+                    height={42}
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
-            <div></div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

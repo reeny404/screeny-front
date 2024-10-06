@@ -4,7 +4,7 @@ import Section3 from "@/components/landing/Section3";
 
 export default function DesktopLandingPage() {
   return (
-    <main className="px-12 py-12">
+    <main className="space-y-32 px-12 py-12">
       <Section1 />
       <Section2 />
       <Section3 />
