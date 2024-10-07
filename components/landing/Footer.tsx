@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="relative bottom-4 mx-auto flex w-[95%] flex-col py-20">
+    <footer className="relative bottom-6 mx-auto flex w-[95%] flex-col py-20">
       <Image
         src="/landing/footer-bg.png"
         fill
@@ -10,13 +10,7 @@ function Footer() {
         className="object-fit z-0 opacity-30"
       />
       <div className="z-10 flex w-full flex-col items-center">
-        <Image
-          src="/logo.png"
-          width={128}
-          height={128}
-          alt="logo"
-          className=""
-        />
+        <Image src="/logo.png" width={128} height={128} alt="logo" />
         <div className="pb-6 text-center">
           <h2 className="relative -top-3 text-2xl font-semibold">
             Screeny
@@ -27,10 +21,10 @@ function Footer() {
           </h4>
         </div>
         <div className="space-x-4 text-sm">
-          <button className="rounded-full border border-blue-500 bg-blue-500 px-4 py-2 hover:brightness-125">
+          <button className="rounded-full border-2 border-blue-500 bg-blue-500 px-4 py-2.5 hover:brightness-110">
             사전 등록하기
           </button>
-          <button className="rounded-full border-2 border-[#777E90] px-4 py-2 hover:brightness-125">
+          <button className="rounded-full border-2 border-[#777E90] px-4 py-2.5 hover:brightness-125">
             출시 알림받기
           </button>
         </div>
