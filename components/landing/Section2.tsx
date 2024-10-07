@@ -24,34 +24,38 @@ const reviews = [
 function Section2() {
   return (
     <section className="py-16">
-      <div className="bg-dark-navy-100 grid grid-flow-col grid-cols-2 rounded-[2em] pb-32">
-        <div className="space-y-2 py-32 pl-28">
-          <span className="text-sm font-semibold text-green-400">SCREENY</span>
-          <h2 className="pb-5 text-3xl font-semibold leading-normal tracking-tighter">
-            디자인 레퍼런스를
-            <br /> 찾는 시간을 단축시키기 위해,
-            <br /> 내가 찾는 화면을 정확하게
-            <br /> 한곳에 모아서 보여주기 위해.
-          </h2>
-          <span className="text-gray-400">
-            이제는 한 곳에서 편리하고 빠르게 레퍼런스를 찾아보세요!
-          </span>
-        </div>
-        <div className="relative h-full w-full">
-          <Image
-            src="/landing/vault.png"
-            alt="search-card-example"
-            fill
-            className="object-contain"
-          />
-        </div>
+      <div className="rounded-3xl bg-dark-navy-100 pb-32">
+        <article className="mx-auto grid w-5/6 grid-flow-col grid-cols-2 py-20">
+          <div className="space-y-2 py-16">
+            <span className="text-sm font-semibold text-green-400">
+              SCREENY
+            </span>
+            <h2 className="pb-5 text-3xl font-semibold leading-normal tracking-tighter">
+              디자인 레퍼런스를
+              <br /> 찾는 시간을 단축시키기 위해,
+              <br /> 내가 찾는 화면을 정확하게
+              <br /> 한곳에 모아서 보여주기 위해.
+            </h2>
+            <span className="text-gray-400">
+              이제는 한 곳에서 편리하고 빠르게 레퍼런스를 찾아보세요!
+            </span>
+          </div>
+          <div className="relative ml-auto flex h-full w-5/6">
+            <Image
+              src="/landing/vault.png"
+              alt="search-card-example"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </article>
       </div>
       <div className="relative -top-44 mx-auto mt-6 grid h-40 w-5/6 gap-8 md:grid-cols-3">
         {reviews.map((review, i) => (
-          <div key={i} className="bg-dark-navy-200 rounded-3xl px-10 py-10">
+          <div key={i} className="rounded-3xl bg-dark-navy-200 px-10 py-10">
             <span className="text-3xl">“</span>
             <p className="whitespace-pre-wrap py-10">{review.text}</p>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-[1fr_50px]">
               <div className="leading-tight">
                 <div className="text-xs">
                   <span className="pr-1 text-blue-400">@</span>
@@ -59,27 +63,13 @@ function Section2() {
                 </div>
                 <span className="text-xs text-gray-400">{review.job}</span>
               </div>
-              <div className="flex justify-between">
-                <div className="relative -top-1 left-[100px]">
-                  <div className="flex h-3 w-3 justify-center rounded-full bg-green-400">
-                    <Image
-                      src="/icons/check.svg"
-                      alt="check"
-                      width={6}
-                      height={4}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <Image
-                    src={review.profile}
-                    alt="avatar1"
-                    width={42}
-                    height={42}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+              <Image
+                src={review.profile}
+                alt="avatar"
+                width={42}
+                height={42}
+                className="object-cover"
+              />
             </div>
           </div>
         ))}

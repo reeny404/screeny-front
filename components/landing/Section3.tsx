@@ -18,9 +18,9 @@ function Section3() {
       </div>
       <Image
         src="/landing/My profile.png"
-        className="mx-auto aspect-auto object-contain"
-        width={375}
-        height={800}
+        className="relative -top-52 mx-auto object-contain"
+        width={1440}
+        height={1150}
         alt="profile"
       />
     </section>

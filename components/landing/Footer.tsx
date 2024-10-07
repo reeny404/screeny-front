@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="relative bottom-4 mx-auto mt-32 flex w-[95%] flex-col py-20">
+    <footer className="relative bottom-4 mx-auto flex w-[95%] flex-col py-20">
       <Image
         src="/landing/footer-bg.png"
         fill
