@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import Image from "next/image";
 import AbsoulteImg from "./AbsoulteImg";
@@ -23,21 +25,18 @@ function Section1() {
             height={32}
           />
           <AbsoulteImg src="/landing/dot 03.png" className="-left-20 top-44" />
-          <h1 className="text-[50px] font-bold leading-snug tracking-tighter">
+          <h1 className="text-[60px] font-bold leading-snug tracking-tighter md:text-3xl md:leading-normal">
             UI 디자인
             <br /> 컴포넌트 별로
             <br /> 정확한 레퍼런스 찾기
           </h1>
         </div>
-        <p className="text-sm leading-relaxed tracking-tighter text-gray-400">
-          지금까지 디자인 레퍼런스를 찾기 위해 <br />
-          구글과 핀트레스트에 많은 시간을 투자하셨나요? <br />
-          또는 앱을 매번 다운 받으면서 화면들을 확인해보셨나요? <br />
-          내가 찾는 UI 디자인을 앱별로, 컴포넌트별로 정확히 모아서 찾아주는
-          Screeny <br />
-          레퍼런스 찾는 시간을 아껴주는 편리한 서비스
+        <p className="text-base-l leading-relaxed tracking-tighter text-gray-400">
+          UI 디자인 레퍼런스를 앱별, 컴포넌트별로 <br />
+          빠르고 정확하게 제공하는 Screeny. <br />
+          디자이너의 시간을 절약하는 스마트한 솔루션.
           <br />
-          지금 사전등록하고 얼리유저 혜택을 받아보세요!
+          지금 사전 등록하고 얼리 유저 혜택을 받아보세요!
         </p>
         <div className="space-x-4 text-sm">
           <button className="rounded-full border border-blue-500 bg-blue-500 px-4 py-3 hover:brightness-110">
@@ -48,21 +47,23 @@ function Section1() {
           </button>
         </div>
       </div>
-      <div className="flex flex-col items-center space-y-8">
-        <div className="flex space-x-2 text-sm">
-          {ComponentTypes.map((text, i) => {
-            return (
-              <div
-                key={i}
-                className={clsx(
-                  "rounded-full border border-gray-600 px-3 py-2 font-semibold",
-                  i == 0 && "bg-white text-navy"
-                )}
-              >
-                {text}
-              </div>
-            );
-          })}
+      <div className="flex flex-col space-y-8">
+        <div className="w-full">
+          <div className="min-w-[562px] overflow-hidden">
+            <div className="text-base-s flex w-full space-x-2">
+              {ComponentTypes.map((text, i) => (
+                <div
+                  key={i}
+                  className={clsx(
+                    "rounded-full border border-gray-600 px-3 py-2 font-semibold",
+                    i == 0 && "bg-white text-navy"
+                  )}
+                >
+                  {text}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
         <Image
           src="/landing/search-card.png"

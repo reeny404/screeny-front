@@ -12,11 +12,11 @@ function Footer() {
       <div className="z-10 flex w-full flex-col items-center">
         <Image src="/logo.png" width={128} height={128} alt="logo" />
         <div className="pb-6 text-center">
-          <h2 className="relative -top-3 text-2xl font-semibold">
+          <h2 className="relative -top-3 text-4xl font-semibold">
             Screeny
             <span className="text-carrot">.</span>
           </h2>
-          <h4 className="text-xs tracking-tighter text-gray-200">
+          <h4 className="text-base-l tracking-tighter text-gray-200">
             새로운 디자인 레퍼런스 플랫폼
           </h4>
         </div>
@@ -38,7 +38,7 @@ function Footer() {
               className="m-4"
             />
           </button>
-          <p className="text-xs text-gray-400">© 2024, Screeny.</p>
+          <p className="text-sm text-gray-400">© 2024, Screeny.</p>
         </div>
       </div>
     </footer>
