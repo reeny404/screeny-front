@@ -1,6 +1,5 @@
 import AbsoulteImg from "@/components/landing/AbsoulteImg";
 import Footer from "@/components/landing/Footer";
-import Header from "@/components/landing/Header";
 import { PropsWithChildren } from "react";
 
 function RootLayout({ children }: PropsWithChildren) {
@@ -25,7 +24,6 @@ function RootLayout({ children }: PropsWithChildren) {
         width={400}
         height={400}
       />
-      <Header />
       {children}
       <Footer />
     </div>

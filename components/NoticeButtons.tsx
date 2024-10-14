@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -16,9 +17,12 @@ function NoticeButtons({ className = "" }: Props) {
       <button className="rounded-full border border-blue-500 bg-blue-500 px-4 py-3 hover:brightness-110">
         사전 등록하기
       </button>
-      <button className="rounded-full border border-gray-600 px-4 py-3 hover:brightness-75">
+      <Link
+        href="https://tally.so/r/wo7YKe"
+        className="rounded-full border border-gray-600 px-4 py-3 hover:brightness-75"
+      >
         출시 알림받기
-      </button>
+      </Link>
     </div>
   );
 }
