@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import AbsoulteImg from "./AbsoulteImg";
+import AbsoulteImg from "../AbsoulteImg";
+import NoticeButtons from "@/components/NoticeButtons";
 
 const ComponentTypes = [
   "카드",
@@ -25,7 +26,7 @@ function Section1() {
             height={32}
           />
           <AbsoulteImg src="/landing/dot 03.png" className="-left-20 top-44" />
-          <h1 className="text-[60px] font-bold leading-snug tracking-tighter md:text-3xl md:leading-normal">
+          <h1 className="text-3xl font-bold leading-snug tracking-tighter md:leading-normal lg:text-[60px]">
             UI 디자인
             <br /> 컴포넌트 별로
             <br /> 정확한 레퍼런스 찾기
@@ -38,19 +39,12 @@ function Section1() {
           <br />
           지금 사전 등록하고 얼리 유저 혜택을 받아보세요!
         </p>
-        <div className="space-x-4 text-sm">
-          <button className="rounded-full border border-blue-500 bg-blue-500 px-4 py-3 hover:brightness-110">
-            사전 등록하기
-          </button>
-          <button className="rounded-full border border-gray-600 px-4 py-3 hover:brightness-75">
-            출시 알림받기
-          </button>
-        </div>
+        <NoticeButtons />
       </div>
       <div className="flex flex-col space-y-8">
         <div className="w-full">
           <div className="min-w-[562px] overflow-hidden">
-            <div className="text-base-s flex w-full space-x-2">
+            <div className="flex w-full space-x-2 text-base-s">
               {ComponentTypes.map((text, i) => (
                 <div
                   key={i}

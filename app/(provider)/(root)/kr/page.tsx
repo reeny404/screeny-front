@@ -1,6 +1,6 @@
-import Section1 from "@/components/landing/Section1";
-import Section2 from "@/components/landing/Section2";
-import Section3 from "@/components/landing/Section3";
+import Section1 from "@/components/landing/desktop/Section1";
+import Section2 from "@/components/landing/desktop/Section2";
+import Section3 from "@/components/landing/desktop/Section3";
 
 export default function DesktopLandingPage() {
   return (

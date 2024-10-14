@@ -1,21 +1,17 @@
 import Image from "next/image";
+import NoticeButtons from "../NoticeButtons";
 
 function Header() {
   return (
-    <header className="flex w-full justify-between px-28 py-12">
-      <div className="flex text-[28px] font-semibold">
-        <Image src="/logo.png" width={40} height={40} alt="로고" />
+    <header className="flex w-full flex-col items-center justify-between space-y-6 py-5 md:flex-row md:py-12 md:pl-28 md:pr-11">
+      <div className="flex text-3xl font-semibold md:text-[28px]">
+        <div className="relative hidden h-10 w-10 md:block">
+          <Image src="/logo.png" fill alt="로고" />
+        </div>
         Screeny
         <span className="text-carrot">.</span>
       </div>
-      <div className="space-x-4 text-sm">
-        <button className="rounded-full border border-blue-500 bg-blue-500 px-4 py-3 hover:brightness-110">
-          사전 등록하기
-        </button>
-        <button className="rounded-full border border-gray-600 px-4 py-3 hover:brightness-75">
-          출시 알림받기
-        </button>
-      </div>
+      <NoticeButtons />
     </header>
   );
 }
