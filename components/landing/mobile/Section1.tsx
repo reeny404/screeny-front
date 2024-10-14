@@ -21,7 +21,7 @@ function Section1() {
         <div>
           <AbsoulteImg
             src="/landing/dot 04.png"
-            className="hidden:block -top-12 left-80"
+            className="-top-12 left-80 hidden md:block"
             width={32}
             height={32}
           />
