@@ -17,7 +17,7 @@ function Section3() {
         </p>
       </div>
       <Image
-        src="/landing/phone-desktop.png"
+        src="/landing/phone-desk.png"
         className="relative -top-52 mx-auto object-contain md:-top-36"
         width={1440}
         height={1150}
