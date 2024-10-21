@@ -19,8 +19,8 @@ function Header() {
   return (
     <header
       className={clsx(
-        "flex w-full flex-col items-center justify-between space-y-6 px-4 py-5 md:flex-row md:space-y-0 md:py-12 md:pl-28 md:pr-11",
-        "fixed z-20 bg-inherit md:static",
+        "flex w-full flex-col md:flex-row items-center justify-between space-y-6 px-4 py-5 md:space-y-0 md:py-12 md:pl-28 md:pr-11",
+        "xs:fixed xs:z-20 bg-inherit md:static",
         // "transition-all duration-300 ease-in-out",
         isScrolled ? "" : ""
       )}

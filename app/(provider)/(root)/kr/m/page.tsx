@@ -7,7 +7,7 @@ function MobileLandingPage() {
   return (
     <>
       <Header />
-      <main className="relative z-10 sm:space-y-10 md:space-y-32 pt-48 text-center sm:px-3 md:px-12 md:pt-10 md:text-left">
+      <main className="xs:space-y-10 relative z-10 pt-44 text-center sm:px-3 md:space-y-32 md:px-12 md:pt-10 md:text-left">
         <Section1 />
         <Section2 />
         <Section3 />

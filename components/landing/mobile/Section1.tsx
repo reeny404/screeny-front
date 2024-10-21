@@ -47,12 +47,12 @@ function Section1() {
       <div className="flex flex-col space-y-5 md:space-y-8">
         <div className="w-[calc(100vw-1.5em)] overflow-hidden">
           <div className="min-w-[562px]">
-            <div className="flex w-full space-x-2 text-base-s sm:justify-center md:justify-normal">
+            <div className="xs:justify-center flex w-full space-x-2 text-base-s sm:justify-center md:justify-normal">
               {ComponentTypes.map((text, i) => (
                 <div
                   key={i}
                   className={clsx(
-                    "rounded-full border border-gray-600 px-3 py-2 font-semibold",
+                    "text-nowrap rounded-full border border-gray-600 px-3 py-2 font-semibold",
                     i == 0 && "bg-white text-navy"
                   )}
                 >

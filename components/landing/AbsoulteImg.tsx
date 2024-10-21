@@ -11,7 +11,7 @@ type Props = {
 
 function AbsoulteImg({ src, className, width = 20, height = 20 }: Props) {
   return (
-    <div className="xs:hidden relative z-0 h-0 w-full md:block">
+    <div className="relative z-0 hidden h-0 w-full md:block">
       <Image
         src={src}
         alt="dot"
