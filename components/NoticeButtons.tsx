@@ -10,7 +10,7 @@ function NoticeButtons({ className = "" }: Props) {
   return (
     <div
       className={clsx(
-        "space-x-4 font-bold sm:text-sm md:text-base-s",
+        "xs:text-sm space-x-4 font-bold sm:text-sm md:text-base-s",
         className
       )}
     >

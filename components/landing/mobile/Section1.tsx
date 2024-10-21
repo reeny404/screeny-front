@@ -17,7 +17,7 @@ const ComponentTypes = [
 function Section1() {
   return (
     <section className="grid space-y-10 md:grid-flow-col md:grid-cols-2 md:space-y-0 md:py-16 md:pl-16">
-      <div className="space-y-4">
+      <div className="sm:space-y-4 md:space-y-10">
         <div>
           <AbsoulteImg
             src="/landing/dot 04.png"
@@ -45,9 +45,9 @@ function Section1() {
         <NoticeButtons className="hidden md:block" />
       </div>
       <div className="flex flex-col space-y-5 md:space-y-8">
-        <div className="w-[calc(100vw-1.5em)]">
-          <div className="min-w-[562px] overflow-hidden">
-            <div className="flex w-full space-x-2 text-base-s">
+        <div className="w-[calc(100vw-1.5em)] overflow-hidden">
+          <div className="min-w-[562px]">
+            <div className="flex w-full space-x-2 text-base-s sm:justify-center md:justify-normal">
               {ComponentTypes.map((text, i) => (
                 <div
                   key={i}
@@ -62,7 +62,7 @@ function Section1() {
             </div>
           </div>
         </div>
-        <div className="relative h-72 lg:h-[444px] lg:w-[654px]">
+        <div className="relative h-72 w-full lg:h-[444px]">
           <Image
             src="/landing/search-card.png"
             alt="search-card-example"
