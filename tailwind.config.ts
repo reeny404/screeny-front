@@ -19,6 +19,12 @@ const config: Config = {
       "4xl": "2.441rem",
       "5xl": "3.052rem",
     },
+    screens: {
+      xs: "280px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+    },
     extend: {
       colors: {
         background: "var(--background)",
