@@ -23,8 +23,8 @@ const reviews = [
 
 function Section2() {
   return (
-    <section className="md:py-16">
-      <div className="rounded-3xl bg-dark-navy-100 px-4 py-8 md:px-0 md:pb-32 md:pt-0">
+    <section className="xs:px-5 md:px-0 md:py-16">
+      <div className="bg-nenutral-3 rounded-3xl px-4 py-8 md:px-0 md:pb-32 md:pt-0">
         <article className="grid space-y-4 md:mx-auto md:grid md:w-5/6 md:grid-flow-col md:grid-cols-[1fr_220px] md:space-y-0 md:py-20 lg:grid-cols-2">
           <div className="space-y-3 pb-8 md:space-y-2 md:py-16">
             <p className="text-base font-bold text-green-400 md:text-sm md:font-semibold">
@@ -57,7 +57,7 @@ function Section2() {
           {reviews.map((review, i) => (
             <div
               key={i}
-              className="mx-auto max-w-[352px] rounded-3xl bg-dark-navy-200 px-6 py-8 md:px-10 md:py-10"
+              className="bg-darkNavy mx-auto max-w-[352px] rounded-3xl px-6 py-8 md:px-10 md:py-10"
             >
               <div className="text-2xl md:text-3xl">“</div>
               <p className="whitespace-pre-wrap break-all py-10 sm:text-base-l md:text-base lg:text-[22px]">

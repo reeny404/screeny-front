@@ -45,8 +45,8 @@ function Section1() {
         <NoticeButtons className="hidden md:block" />
       </div>
       <div className="flex flex-col space-y-5 md:space-y-8">
-        <div className="xs:w-screen overflow-hidden md:max-w-[45.5vw]">
-          <div className="xs:justify-center flex w-full space-x-2 text-base-s sm:justify-center md:justify-normal">
+        <div className="overflow-hidden xs:w-screen md:max-w-[45.5vw]">
+          <div className="flex w-full space-x-2 text-base-s px-5">
             {ComponentTypes.map((text, i) => (
               <div
                 key={i}

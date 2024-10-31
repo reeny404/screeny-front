@@ -1,0 +1,62 @@
+[
+  {
+    "appName": "어플명1",
+    "appType": "쇼핑",
+    "appProfile": "",
+    "images": [
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png"
+    ]
+  },
+  {
+    "appName": "어플명2",
+    "appType": "쇼핑",
+    "appProfile": "",
+    "images": [
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png"
+    ]
+  },
+  {
+    "appName": "어플명3",
+    "appType": "쇼핑",
+    "appProfile": "",
+    "images": [
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png"
+    ]
+  },
+  {
+    "appName": "어플명4",
+    "appType": "쇼핑",
+    "appProfile": "",
+    "images": [
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png"
+    ]
+  },
+  {
+    "appName": "어플명5",
+    "appType": "쇼핑",
+    "appProfile": "",
+    "images": [
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png",
+      "/temp/ref_captured.png"
+    ]
+  }
+]
