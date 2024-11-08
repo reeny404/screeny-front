@@ -12,7 +12,7 @@ function Header({ children }: PropsWithChildren) {
         // "transition-all duration-300 ease-in-out",
       )}
     >
-      <div className="flex text-3xl font-semibold md:pl-11 md:text-[28px]">
+      <div className="flex text-3xl font-semibold md:text-2xl">
         <div className="relative hidden h-10 w-10 md:block">
           <Image src="/logo.png" fill alt="로고" />
         </div>

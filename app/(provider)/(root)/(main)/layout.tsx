@@ -10,7 +10,7 @@ function RootLayout({ children }: PropsWithChildren) {
         <Image src="/icons/menu.svg" alt="menu" width={32} height={32} />
       </Header>
       {children}
-      <Footer></Footer>
+      <Footer className="mt-32" />
     </div>
   );
 }
