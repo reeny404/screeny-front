@@ -1,20 +1,22 @@
+"use client";
 import { IS_OPEN } from "@/constants/env";
 import { Input } from "@headlessui/react";
 import clsx from "clsx";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import React from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import refs from "@/data/references.json";
+import RoundButton from "../../../../components/base/RoundButton";
 
-const WORDS = [
-  "전체",
-  "버튼",
-  "플로팅 버튼",
-  "체크박스",
-  "라디오 버튼",
-  "토글 스위치",
-  "슬라이더",
-];
+type Filter = { [text: string]: boolean };
+const initialFilter: Filter = {
+  버튼: false,
+  "플로팅 버튼": false,
+  체크박스: false,
+  "라디오 버튼": false,
+  "토글 스위치": false,
+  슬라이더: false,
+};
 
 const TEMP_REFS = refs;
 
@@ -23,34 +25,64 @@ function MainPage() {
     redirect("/kr");
   }
 
+  const [filter, setFilter] = useState<Filter>(initialFilter);
+  const handleClickType = useCallback(
+    (word: string) => () => {
+      setFilter((prevFilter) => ({ ...prevFilter, [word]: !prevFilter[word] }));
+    },
+    []
+  );
+  const hasSelectedButton = useMemo(() => {
+    return Object.keys(filter).find((key) => filter[key]);
+  }, [filter]);
+
   return (
-    <main className="px-3.5">
+    <div className="px-3.5">
       <Input
+        autoFocus
         type="text"
         placeholder="컴포넌트를 검색해보세요."
         className="my-5 w-full rounded-full bg-nenutral-2 px-6 py-3"
       />
       <div className="flex w-full space-x-2 overflow-hidden text-base-s sm:max-w-screen-sm">
-        {WORDS.map((text, i) => (
-          <div
-            key={i}
-            className={clsx(
-              "text-nowrap rounded-full border border-gray-600 px-3 py-2 font-semibold",
-              i == 0 && "bg-white text-navy"
-            )}
+        <RoundButton className="hidden md:block" isPressed>
+          <div className="flex space-x-2 pr-4">
+            <span>필터</span>
+            <Image
+              alt="filterIcon"
+              width={16}
+              height={16}
+              src="/icons/tuning.svg"
+            />
+          </div>
+        </RoundButton>
+        <span className="hidden px-3 md:flex">
+          <span className="my-1.5 border-r border-r-nenutral-5" />
+        </span>
+        <RoundButton
+          isPressed={!hasSelectedButton}
+          onClick={() => setFilter(initialFilter)}
+        >
+          전체
+        </RoundButton>
+        {Object.keys(filter).map((text) => (
+          <RoundButton
+            key={text}
+            isPressed={filter[text]}
+            onClick={handleClickType(text)}
           >
             {text}
-          </div>
+          </RoundButton>
         ))}
       </div>
-      <article className="my-6 grid grid-cols-2 justify-center gap-4">
-        {TEMP_REFS.map((ref) => (
-          <div key={ref.appName} className="mx-auto space-y-2 overflow-hidden">
-            <div className="flex flex-row space-x-2">
+      <article className="my-6 grid grid-cols-2 justify-center gap-x-4 gap-y-6">
+        {TEMP_REFS.map(({ appName, appProfile, appType, images }) => (
+          <div key={appName} className="mx-auto space-y-2 overflow-hidden">
+            <header className="flex flex-row space-x-2">
               <div className="h-9 w-9 rounded-lg bg-nenutral-8">
-                {ref.appProfile && (
+                {appProfile && (
                   <Image
-                    src={ref.appProfile}
+                    src={appProfile}
                     alt="이미지"
                     fill
                     className="object-contain"
@@ -58,12 +90,12 @@ function MainPage() {
                 )}
               </div>
               <div>
-                <div className="text-base-s font-bold">{ref.appName}</div>
-                <div className="text-sm text-nenutral-7">{ref.appType}</div>
+                <div className="text-base-s font-bold">{appName}</div>
+                <div className="text-sm text-nenutral-7">{appType}</div>
               </div>
-            </div>
+            </header>
             <div className="grid w-full xs:grid-cols-1 md:grid-cols-3 md:gap-3.5">
-              {ref.images.slice(0, 3).map((image, i) => (
+              {images.slice(0, 3).map((image, i) => (
                 <Image
                   key={i}
                   src={image}
@@ -81,7 +113,7 @@ function MainPage() {
           </div>
         ))}
       </article>
-    </main>
+    </div>
   );
 }
 

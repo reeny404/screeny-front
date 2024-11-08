@@ -1,18 +1,8 @@
 "use client";
-
-import clsx from "clsx";
 import Image from "next/image";
-import AbsoulteImg from "./AbsoulteImg";
+import AbsoulteImg from "../../../../../components/landing/AbsoulteImg";
 import NoticeButtons from "@/components/NoticeButtons";
-
-const ComponentTypes = [
-  "카드",
-  "플로팅 버튼",
-  "체크박스",
-  "라디오 버튼",
-  "토글 스위치",
-  "슬라이더",
-];
+import RoundButton from "@/components/base/RoundButton";
 
 function Section1() {
   return (
@@ -46,18 +36,13 @@ function Section1() {
       </div>
       <div className="flex flex-col space-y-5 md:space-y-8">
         <div className="overflow-hidden xs:w-screen md:max-w-[45.5vw]">
-          <div className="flex w-full space-x-2 text-base-s px-5">
-            {ComponentTypes.map((text, i) => (
-              <div
-                key={i}
-                className={clsx(
-                  "text-nowrap rounded-full border border-gray-600 px-3 py-2 font-semibold",
-                  i == 0 && "bg-white text-navy"
-                )}
-              >
-                {text}
-              </div>
-            ))}
+          <div className="flex w-full space-x-2 px-5 text-base-s">
+            <RoundButton isPressed>카드</RoundButton>
+            <RoundButton>플로팅 버튼</RoundButton>
+            <RoundButton>체크박스</RoundButton>
+            <RoundButton>라디오 버튼</RoundButton>
+            <RoundButton>토글 스위치</RoundButton>
+            <RoundButton>슬라이더</RoundButton>
           </div>
         </div>
         <div className="relative h-72 w-full lg:h-[444px]">
