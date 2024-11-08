@@ -1,6 +1,6 @@
-import Section1 from "@/components/landing/Section1";
-import Section2 from "@/components/landing/Section2";
-import Section3 from "@/components/landing/Section3";
+import Section1 from "@/app/(provider)/(root)/kr/_section/Section1";
+import Section2 from "@/app/(provider)/(root)/kr/_section/Section2";
+import Section3 from "@/app/(provider)/(root)/kr/_section/Section3";
 
 function LandingPage() {
   return (
