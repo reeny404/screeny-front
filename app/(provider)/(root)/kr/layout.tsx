@@ -31,7 +31,7 @@ function LandingLayout({ children }: PropsWithChildren) {
       </Header>
       {children}
       <Footer hasLogo={true}>
-        <div className="py-6">
+        <div className="pt-6">
           <NoticeButtons />
         </div>
       </Footer>

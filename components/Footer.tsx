@@ -1,16 +1,24 @@
+import clsx from "clsx";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
 
 interface FooterProps {
   hasLogo?: boolean;
+  className?: string;
 }
 
 function Footer({
   hasLogo = false,
+  className,
   children,
 }: FooterProps & PropsWithChildren) {
   return (
-    <footer className="relative bottom-6 mx-auto mt-6 flex w-[95%] flex-col py-20">
+    <footer
+      className={clsx(
+        "relative bottom-6 mx-auto mt-6 flex w-[95%] flex-col py-20",
+        className
+      )}
+    >
       <Image
         src="/landing/footer-bg.png"
         fill
@@ -37,7 +45,7 @@ function Footer({
           </h4>
         </div>
         {children}
-        <div className="mt-2 flex flex-col items-center space-y-4">
+        <div className="mt-8 flex flex-col items-center space-y-4">
           <button className="flex h-8 w-8 items-center justify-center rounded-xl bg-darkNavy">
             <Image
               src="/icons/instagram.svg"
