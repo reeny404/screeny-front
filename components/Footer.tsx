@@ -27,7 +27,7 @@ function Footer({
             className="hidden md:block"
           />
         )}
-        <div className="pb-6 text-center">
+        <div className="text-center">
           <h2 className="relative -top-3 text-4xl font-semibold">
             Screeny
             <span className="text-carrot">.</span>
@@ -37,8 +37,8 @@ function Footer({
           </h4>
         </div>
         {children}
-        <div className="flex flex-col items-center space-y-4 pt-8">
-          <button className="bg-darkNavy flex h-8 w-8 items-center justify-center rounded-xl">
+        <div className="mt-2 flex flex-col items-center space-y-4">
+          <button className="flex h-8 w-8 items-center justify-center rounded-xl bg-darkNavy">
             <Image
               src="/icons/instagram.svg"
               width={16}
