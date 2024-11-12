@@ -46,7 +46,7 @@ function MainPage() {
       />
       <div className="flex w-full space-x-2 overflow-hidden text-base-s">
         <RoundButton className="hidden md:block" isPressed>
-          <div className="flex space-x-2 pr-4">
+          <div className="flex space-x-2">
             <span>필터</span>
             <Image
               alt="filterIcon"
