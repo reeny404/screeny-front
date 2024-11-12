@@ -15,16 +15,18 @@ function Footer({
   return (
     <footer
       className={clsx(
-        "relative bottom-6 mx-auto mt-6 flex w-[95%] flex-col py-20",
+        "relative bottom-6 mx-auto flex w-[95%] flex-col py-20",
         className
       )}
     >
-      <Image
-        src="/landing/footer-bg.png"
-        fill
-        alt="gradient"
-        className="object-fit z-0 opacity-30"
-      />
+      <div className="mt-6">
+        <Image
+          src="/landing/footer-bg.png"
+          fill
+          alt="gradient"
+          className="object-fit z-0 opacity-30"
+        />
+      </div>
       <div className="z-10 flex w-full flex-col items-center">
         {hasLogo && (
           <Image

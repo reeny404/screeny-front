@@ -44,7 +44,7 @@ function MainPage() {
         placeholder="컴포넌트를 검색해보세요."
         className="my-5 w-full rounded-full bg-nenutral-2 px-6 py-3"
       />
-      <div className="flex w-full space-x-2 overflow-hidden text-base-s sm:max-w-screen-sm">
+      <div className="flex w-full space-x-2 overflow-hidden text-base-s">
         <RoundButton className="hidden md:block" isPressed>
           <div className="flex space-x-2 pr-4">
             <span>필터</span>
