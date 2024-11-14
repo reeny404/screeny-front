@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
+import ScreenyLogo from "./base/ScreenyLogo";
 
 interface FooterProps {
   hasLogo?: boolean;
@@ -30,7 +31,7 @@ function Footer({
       <div className="z-10 flex w-full flex-col items-center">
         {hasLogo && (
           <Image
-            src="/logo.png"
+            src="/logo/screeny.png"
             width={128}
             height={128}
             alt="logo"
@@ -38,10 +39,7 @@ function Footer({
           />
         )}
         <div className="text-center">
-          <h2 className="relative -top-3 text-4xl font-semibold">
-            Screeny
-            <span className="text-carrot">.</span>
-          </h2>
+          <ScreenyLogo />
           <h4 className="text-sm font-semibold tracking-tighter text-gray-200 md:text-base-l md:font-normal">
             새로운 디자인 레퍼런스 플랫폼
           </h4>

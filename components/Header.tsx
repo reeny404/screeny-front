@@ -14,7 +14,7 @@ function Header({ children }: PropsWithChildren) {
     >
       <div className="flex text-3xl font-semibold md:text-2xl">
         <div className="relative hidden h-10 w-10 md:block">
-          <Image src="/logo.png" fill alt="로고" />
+          <Image src="/logo/screeny.png" fill alt="로고" />
         </div>
         Screeny
         <span className="text-carrot">.</span>
