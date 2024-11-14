@@ -5,7 +5,7 @@ import React from "react";
 
 function LoginPage() {
   return (
-    <main className="grid h-screen grid-cols-[2fr_3fr]">
+    <main className="grid h-screen md:grid-cols-[2fr_3fr]">
       <section className="flex flex-col items-center justify-center space-y-5 text-center">
         <ScreenyLogo />
         <div className="flex flex-col text-2xl font-semibold">
@@ -38,7 +38,7 @@ function LoginPage() {
           </span>
         </div>
       </section>
-      <section className="relative overflow-hidden">
+      <section className="relative hidden overflow-hidden md:block">
         <Image
           src="/bg-login.png"
           alt="mobile-captures"
