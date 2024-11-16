@@ -4,7 +4,7 @@ import clsx from "clsx";
 import "./globals.css";
 
 const pretendard = localFont({
-  src: "./fonts/PretendardVariable.woff2",
+  src: "../public/fonts/PretendardVariable.woff2",
   variable: "--font-pretendard",
   weight: "100 900",
 });

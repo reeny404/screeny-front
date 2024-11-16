@@ -1,6 +1,6 @@
 export type Reference = {
   appName: string;
-  appType: "쇼핑";
+  appType: string;
   appProfile: string;
   images: string[];
 };

@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Footer from "@/components/base/Footer";
+import Header from "@/components/base/Header";
 import Image from "next/image";
 import React, { PropsWithChildren } from "react";
 

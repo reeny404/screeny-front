@@ -1,7 +1,7 @@
 import AbsoulteImg from "@/components/landing/AbsoulteImg";
-import Footer from "@/components/Footer";
+import Footer from "@/components/base/Footer";
 import { PropsWithChildren } from "react";
-import NoticeButtons from "@/components/NoticeButtons";
+import NoticeButtons from "@/components/landing/NoticeButtons";
 import Header from "@/components/landing/Header";
 
 function LandingLayout({ children }: PropsWithChildren) {

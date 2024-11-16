@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import AbsoulteImg from "../../../../../components/landing/AbsoulteImg";
-import NoticeButtons from "@/components/NoticeButtons";
+import NoticeButtons from "@/components/landing/NoticeButtons";
 import RoundButton from "@/components/base/RoundButton";
+import AbsoulteImg from "@/components/landing/AbsoulteImg";
 
 function Section1() {
   return (

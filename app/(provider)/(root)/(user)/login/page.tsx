@@ -21,7 +21,7 @@ function LoginPage() {
           />
           <span className="w-3/4">구글로 계속하기</span>
         </button>
-        <div className="flex flex-col text-sm text-nenutral-7">
+        <div className="text-neutrals-7 flex flex-col text-sm">
           <span>
             시작하면 아래{" "}
             <Link href="/docs/terms" className="underline">

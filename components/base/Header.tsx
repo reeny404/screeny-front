@@ -9,7 +9,6 @@ function Header({ children }: PropsWithChildren) {
         "flex w-full flex-row items-center justify-between",
         "mt-9 px-3.5 py-5",
         "bg-inherit md:static"
-        // "transition-all duration-300 ease-in-out",
       )}
     >
       <div className="flex text-3xl font-semibold md:text-2xl">

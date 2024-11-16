@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
-import ScreenyLogo from "./base/ScreenyLogo";
+import ScreenyLogo from "./ScreenyLogo";
 
 interface FooterProps {
   hasLogo?: boolean;
