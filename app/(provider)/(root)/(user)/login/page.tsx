@@ -1,4 +1,5 @@
 import ScreenyLogo from "@/components/base/ScreenyLogo";
+import { API_SERVER } from "@/constants/env";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,7 +13,10 @@ function LoginPage() {
           <span>로그인하고</span>
           <span>더 많은 컨텐츠를 찾아보세요!</span>
         </div>
-        <button className="flex w-2/3 max-w-[333px] justify-center rounded-full bg-white py-4 font-semibold text-black">
+        <Link
+          href={API_SERVER + "/oauth2/authorization/google"}
+          className="flex w-2/3 max-w-[333px] justify-center rounded-full bg-white py-4 font-semibold text-black"
+        >
           <Image
             src="/logo/google.svg"
             alt="google-logo"
@@ -20,8 +24,8 @@ function LoginPage() {
             height={23}
           />
           <span className="w-3/4">구글로 계속하기</span>
-        </button>
-        <div className="text-neutrals-7 flex flex-col text-sm">
+        </Link>
+        <div className="flex flex-col text-sm text-neutrals-7">
           <span>
             시작하면 아래{" "}
             <Link href="/docs/terms" className="underline">
