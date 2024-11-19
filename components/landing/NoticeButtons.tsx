@@ -6,7 +6,7 @@ type Props = {
   className?: string;
 };
 
-function NoticeButtons({ className = "" }: Props) {
+function NoticeButtons({ className }: Props) {
   return (
     <div
       className={clsx("space-x-4 text-sm font-bold md:text-base-s", className)}

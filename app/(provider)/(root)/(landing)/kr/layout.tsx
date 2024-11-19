@@ -26,10 +26,12 @@ function LandingLayout({ children }: PropsWithChildren) {
         width={400}
         height={400}
       />
-      <Header>
-        <NoticeButtons />
-      </Header>
-      {children}
+      <div className="mx-auto max-w-[1440px]">
+        <Header>
+          <NoticeButtons />
+        </Header>
+        {children}
+      </div>
       <Footer hasLogo={true}>
         <div className="pt-6">
           <NoticeButtons />

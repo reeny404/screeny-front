@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={clsx(
           pretendard.variable,
-          "min-h-screen min-w-full bg-navy text-white"
+          "mx-auto min-h-screen min-w-full bg-navy text-white"
         )}
       >
         {children}

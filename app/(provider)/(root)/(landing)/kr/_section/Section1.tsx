@@ -45,11 +45,12 @@ function Section1() {
             <RoundButton>슬라이더</RoundButton>
           </div>
         </div>
-        <div className="relative h-72 w-full lg:h-[444px]">
+        <div className="relative w-full px-5">
           <Image
             src="/landing/search-card.png"
             alt="search-card-example"
-            fill
+            width={654}
+            height={444}
             className="object-contain"
           />
         </div>

@@ -6,7 +6,7 @@ import { Reference as TRef } from "@/types/Reference";
 import ComponentFilter from "@/components/ComponentFilter";
 import SearchInput from "@/components/SearchInput";
 
-const TEMP_REFS = refs as TRef[];
+const TEMP_REFS: TRef[] = refs;
 
 function MainPage() {
   if (!IS_OPEN) {

@@ -1,29 +1,15 @@
 "use client";
-import { INITIAL_FILTER } from "@/types/Filter";
-import { Field, Input } from "@headlessui/react";
+import useRecentSearchStore from "@/store/RecentSearch.store";
 import clsx from "clsx";
 import Image from "next/image";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-
-// const RECENTS_WORDS: string[] = Object.keys(INITIAL_FILTER).slice(0, 3);
+import React, { useEffect, useRef, useState } from "react";
+import SearchMenu from "./SearchMenu";
+import InputDebounced from "./base/InputDebounced";
 
 function SearchInput() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [searchWord, setSearchWord] = useState<string>("");
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
-
-  // TODO 세션 이용한 최근검색어 기능 추가
-  // const [recentWords, setRecentWords] = useState<string[]>(RECENTS_WORDS);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchWord(value);
-  };
-
-  const handleClickWord = useCallback((search: string) => {
-    setSearchWord(search);
-    setIsDropdownOpen(false);
-  }, []);
+  const { addRecentSearch } = useRecentSearchStore();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -31,6 +17,7 @@ function SearchInput() {
         setIsDropdownOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
@@ -39,44 +26,32 @@ function SearchInput() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative mb-1 h-16 w-full">
-      <Field
+    <div ref={containerRef} className="relative h-20 w-full transition-all">
+      <div
         className={clsx(
           "flex flex-col rounded-3xl transition-transform",
-          isDropdownOpen ? "bg-neutrals-4" : "h-12 bg-inherit"
+          isDropdownOpen ? "bg-neutrals-1" : "h-12 bg-inherit"
         )}
       >
-        <div className={clsx("bg-neutrals-2 mx-2.5 mt-1 flex rounded-full")}>
-          <Input
+        <div
+          className={clsx(
+            "mt-2 flex rounded-full pr-6",
+            isDropdownOpen ? "mx-1 bg-neutrals-2" : "bg-neutrals-2"
+          )}
+        >
+          <InputDebounced
+            autoComplete="off"
             placeholder="컴포넌트를 검색해보세요."
             className="mx-6 my-3 w-full bg-inherit outline-none"
-            onChange={handleInputChange}
+            onChange={(e) => addRecentSearch(e.target.value)}
             onFocus={() => setIsDropdownOpen(true)}
-            value={searchWord}
-          ></Input>
-          <Image
-            src="/icons/search.svg"
-            alt="lens"
-            width={22}
-            height={22}
-            className="mr-6"
           />
+          <Image src="/icons/search.svg" alt="lens" width={22} height={22} />
         </div>
         {isDropdownOpen && (
-          <ul className="w-full rounded">
-            {Object.keys(INITIAL_FILTER).map((search, index) => (
-              // TODO 트랜딩, UI Component 검색 내부 UI 구현 필요
-              <li
-                key={index}
-                onClick={() => handleClickWord(search)}
-                className="hover:bg-neutrals-5 cursor-pointer px-4 py-2"
-              >
-                {search}
-              </li>
-            ))}
-          </ul>
+          <SearchMenu close={() => setIsDropdownOpen(false)} />
         )}
-      </Field>
+      </div>
     </div>
   );
 }
