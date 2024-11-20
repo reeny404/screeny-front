@@ -1,9 +1,14 @@
 import React, { ChangeEvent, InputHTMLAttributes, useState } from "react";
 
+interface InputDebouncedProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
 function InputDebounced({
   onChange: handleOnChange,
   ...props
-}: InputHTMLAttributes<HTMLInputElement>) {
+}: InputDebouncedProps) {
   const [val, setVal] = useState<string>("");
   const [timer, setTimer] = useState<NodeJS.Timeout>();
 
