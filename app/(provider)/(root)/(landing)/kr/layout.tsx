@@ -1,10 +1,12 @@
 import AbsoulteImg from "@/components/landing/AbsoulteImg";
-import Footer from "@/components/landing/Footer";
+import Footer from "@/components/base/Footer";
 import { PropsWithChildren } from "react";
+import NoticeButtons from "@/components/landing/NoticeButtons";
+import Header from "@/components/landing/Header";
 
-function RootLayout({ children }: PropsWithChildren) {
+function LandingLayout({ children }: PropsWithChildren) {
   return (
-    <div className="min-h-screen min-w-full bg-navy text-white">
+    <>
       <AbsoulteImg
         src="/landing/gradient 1.svg"
         className="left-56 top-0"
@@ -24,10 +26,19 @@ function RootLayout({ children }: PropsWithChildren) {
         width={400}
         height={400}
       />
-      {children}
-      <Footer />
-    </div>
+      <div className="mx-auto max-w-[1440px]">
+        <Header>
+          <NoticeButtons />
+        </Header>
+        {children}
+      </div>
+      <Footer hasLogo={true}>
+        <div className="pt-6">
+          <NoticeButtons />
+        </div>
+      </Footer>
+    </>
   );
 }
 
-export default RootLayout;
+export default LandingLayout;
