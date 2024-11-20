@@ -17,7 +17,7 @@ function MainPage() {
     <main className="px-3.5">
       <SearchInput />
       <ComponentFilter />
-      <div className="my-6 grid grid-cols-2 justify-center gap-x-4 gap-y-6">
+      <div className="my-6 grid grid-cols-2 justify-center gap-x-4 gap-y-6 px-1.5">
         {TEMP_REFS.map((ref) => (
           <Reference key={ref.appName} value={ref} />
         ))}
