@@ -8,6 +8,7 @@ import InputDebounced from "./base/InputDebounced";
 
 function SearchInput() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [searchWord, setSearchWord] = useState<string>("");
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const { addRecentSearch } = useRecentSearchStore();
 
@@ -24,6 +25,11 @@ function SearchInput() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleOnClose = (text: string) => {
+    setSearchWord(text);
+    setIsDropdownOpen(false);
+  };
 
   return (
     <div ref={containerRef} className="relative h-20 w-full transition-all">
@@ -45,12 +51,12 @@ function SearchInput() {
             className="mx-6 my-3 w-full bg-inherit outline-none"
             onChange={(e) => addRecentSearch(e.target.value)}
             onFocus={() => setIsDropdownOpen(true)}
+            value={searchWord}
+            setValue={setSearchWord}
           />
           <Image src="/icons/search.svg" alt="lens" width={22} height={22} />
         </div>
-        {isDropdownOpen && (
-          <SearchMenu close={() => setIsDropdownOpen(false)} />
-        )}
+        {isDropdownOpen && <SearchMenu close={handleOnClose} />}
       </div>
     </div>
   );

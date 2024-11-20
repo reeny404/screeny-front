@@ -16,7 +16,7 @@ type TSearchMenu = {
 };
 
 type SearchMenuProps = {
-  close: () => void;
+  close: (text: string) => void;
 };
 
 function SearchMenu({ close }: SearchMenuProps) {
@@ -27,12 +27,12 @@ function SearchMenu({ close }: SearchMenuProps) {
 
   const handleAddRecentWord = useCallback((word: string) => {
     addRecentSearch(word);
-    close();
+    close(word);
   }, []);
 
   return (
     <div className="grid grid-cols-[1fr_4fr] space-x-16 p-5">
-      <ul className="px-1">
+      <ul className="min-w-44 px-1">
         {menus.map((menu, i) => (
           <li
             key={menu.name}
@@ -54,16 +54,17 @@ function SearchMenu({ close }: SearchMenuProps) {
           </li>
         ))}
       </ul>
-      <section className="space-y-8 text-base-s">
+      <section className="max-h-[600px] space-y-8 text-base-s">
         {menus[menuIndex].sub.map(({ name, type, items }) => {
           if (type === "button") {
-            const isRecentWords = name === "최근 검색어";
+            const isRecentSearches = name === "최근 검색어";
             return (
               <Trends
                 key={name}
                 title={name}
                 onClick={handleAddRecentWord}
-                keywords={isRecentWords ? searches : items}
+                keywords={isRecentSearches ? searches : items}
+                isAbleToRemoveWord={isRecentSearches}
               />
             );
           }
@@ -71,7 +72,16 @@ function SearchMenu({ close }: SearchMenuProps) {
             return (
               <ol key={name}>
                 {items.map((item, i) => (
-                  <li key={`${name}-${type}-${i}`}>{item}</li>
+                  <li
+                    key={item}
+                    className="flex cursor-pointer justify-between rounded px-3 py-2.5 hover:bg-neutrals-5"
+                    onClick={() => handleAddRecentWord(item)}
+                  >
+                    <span className="tracking-tighter">{item}</span>
+                    <span className="text-base-s text-neutrals-6">
+                      {items.length - i}
+                    </span>
+                  </li>
                 ))}
               </ol>
             );
