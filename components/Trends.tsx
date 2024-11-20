@@ -1,22 +1,13 @@
-import useRecentSearchStore from "@/store/RecentSearch.store";
-import React, { useCallback } from "react";
+import React from "react";
 import RoundButton from "./base/RoundButton";
 
 type TrendsProps = {
   title: string;
   keywords: string[];
+  onClick: (text: string) => void;
 };
 
-function Trends({ title, keywords }: TrendsProps) {
-  const { addRecentSearch } = useRecentSearchStore();
-  const handleAddRecentWord = useCallback(
-    (word: string) => () => {
-      addRecentSearch(word);
-      close();
-    },
-    []
-  );
-
+function Trends({ title, keywords, onClick }: TrendsProps) {
   return (
     <div>
       <h5 className="pb-1 font-medium text-neutrals-5">{title}</h5>
@@ -24,7 +15,7 @@ function Trends({ title, keywords }: TrendsProps) {
         {keywords.map((keyword) => (
           <RoundButton
             key={keyword}
-            onClick={handleAddRecentWord(keyword)}
+            onClick={() => onClick(keyword)}
             className="hover:bg-neutrals-4"
           >
             {keyword}

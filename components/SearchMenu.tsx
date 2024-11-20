@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
-import RoundButton from "./base/RoundButton";
+import React, { useCallback, useState } from "react";
 import Image from "next/image";
 import useRecentSearchStore from "@/store/RecentSearch.store";
 import Menu from "@/data/SearchMenu.json";
@@ -24,9 +23,12 @@ function SearchMenu({ close }: SearchMenuProps) {
   const { searches } = useRecentSearchStore();
   const menus: TSearchMenu[] = Menu;
   const [menuIndex, setMenuIndex] = useState<number>(0);
-  console.log(menus, searches);
+  const { addRecentSearch } = useRecentSearchStore();
 
-  useEffect(() => {}, []);
+  const handleAddRecentWord = useCallback((word: string) => {
+    addRecentSearch(word);
+    close();
+  }, []);
 
   return (
     <div className="grid grid-cols-[1fr_4fr] space-x-16 p-5">
@@ -53,13 +55,14 @@ function SearchMenu({ close }: SearchMenuProps) {
         ))}
       </ul>
       <section className="space-y-8 text-base-s">
-        {menus[menuIndex].sub.map(({ name, type, items }, i) => {
+        {menus[menuIndex].sub.map(({ name, type, items }) => {
           if (type === "button") {
             const isRecentWords = name === "최근 검색어";
             return (
               <Trends
                 key={name}
                 title={name}
+                onClick={handleAddRecentWord}
                 keywords={isRecentWords ? searches : items}
               />
             );
